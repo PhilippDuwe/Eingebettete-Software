@@ -3,7 +3,7 @@
 */
 
 const int buttonPin = 9;  //Bennenung der Pins   
-const int ledPin1 =  2;
+const int ledPin1 =  2;  // z.B. Arduino: Pin 2 ==> Programm: ledPin1
 const int ledPin2 =  3;
 const int ledPin3 =  4;
 const int ledPin4 =  5;
@@ -57,7 +57,7 @@ digitalWrite(ledPin6, LOW);
 digitalWrite(ledPin7, LOW);
 
 
-     start = millis(); // Der aktuelle Wert von mills wird gespeichert
+     start = millis(); // Der aktuelle Wert von mills wird gespeichert (mills() startet mit dem start des Arduino und speichert die Betriebszeit)
      while(digitalRead(buttonPin) == LOW) // Es wird gewartet bis der Schalter Gedrückt wird
      {
        1; // warten, solange Taste nicht gedrueckt
@@ -66,7 +66,7 @@ digitalWrite(ledPin7, LOW);
    
 }
 
-  void zeitAnzeige()  // für alle 0,1S Reaktionszeit eine Lampe anmachen
+  void zeitAnzeige()  // für alle 0,1 Sekunden Reaktionszeit: eine Lampe anmachen
 {
   if (Dauer<= 100)
   {
@@ -127,13 +127,13 @@ digitalWrite(ledPin7, LOW);
   }  
 }
 
-void loop() {
+void loop() { 
     
-  if(digitalRead(buttonPin)==HIGH) //Schalter gedrückt --> Programm beginnt nach einem Durchgang wieder von vorne
+  if(digitalRead(buttonPin)==HIGH) //Schalter gedrückt --> Programm beginnt (nach einem Durchgang wieder von vorne)
   {  
     
-    reaktion();
-    zeitAnzeige();
+    reaktion(); // Lampen gehen an und dann aus, reaktionsteit wird gespeichert
+    zeitAnzeige();  // Reaktionszeit wird aud Leds angezeigt
   }
   else
   { 
