@@ -18,4 +18,4 @@ Schaltplan des Reaktionstasters als Brd Datei zum Weiterentwickeln und Umbauen.
 
 ***
 Software zum  erstellen der Schaltpläne:
-![Thinkercad](https://www.tinkercad.com/#/)
+[Thinkercad](https://www.tinkercad.com/#/)
