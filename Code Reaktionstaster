@@ -7,10 +7,10 @@ const int ledPin5 =  6;
 const int ledPin6 =  7;
 const int ledPin7 =  8;
 
-int timeDelayStart = 200;                                                       // Geschwindigkweit der Startanimation
+int timeDelayStart = 200;                                                       // Geschwindigkeit der Startanimation
 int reaktiontestZeit;                                                           // Zeit bis die Lampen ausgehen
 int start;                                                                      // Beginn des Tests
-int Dauer;                                                                      // Zeit bis Zur Reaktion
+int Dauer;                                                                      // Zeit bis zur Reaktion
 int AnzeigeDelay = 2000;                                                        // Zeit wie lange Lampen zur Anzeige der Reaktionszeit anbleiben
 
 void setup() {
@@ -26,7 +26,7 @@ void setup() {
     startAnimation();                                                           // Startanimation wird einmal ausgeführt
 }
 
-void startAnimation() {                                                         // Alle LAmpen gehen einmal an und dann aus
+void startAnimation() {                                                         // Alle Lampen gehen einmal an und dann aus
   for (int i = ledPin1; i <= ledPin7; i++) {                                       
     digitalWrite(i, HIGH);
     delay(timeDelayStart);
@@ -46,16 +46,16 @@ for (int i = ledPin1; i <= ledPin7; i++) {                                     /
 reaktiontestZeit = random(500, 10000);                                        // Zufällige Verzögerungszeit
 delay(reaktiontestZeit);
 
-for (int i = ledPin1; i <= ledPin7; i++) {                                    // alle LAmpen gehen aus
+for (int i = ledPin1; i <= ledPin7; i++) {                                    // alle Lampen gehen aus
   digitalWrite(i, LOW);
   }
 
      start = millis();                                                        // Der aktuelle Wert von mills wird gespeichert (mills() startet mit dem start des Arduino und speichert die Betriebszeit)
-     while(digitalRead(buttonPin) == LOW)                                     // Es wird gewartet bis der Schalter Gedrückt wird
+     while(digitalRead(buttonPin) == LOW)                                     // Es wird gewartet bis der Schalter gedrückt wird
      {
-       1;                                                                     // warten, solange Taste nicht gedrueckt
+       1;                                                                     // warten, solange Schalter nicht gedrückt
      }
-     Dauer = millis() - start;                                                // Die Zeit bis zum drücken des Schalters wird erechnet
+     Dauer = millis() - start;                                                // Die Zeit bis zum Drücken des Schalters wird errechnet
    
 }
 
@@ -115,7 +115,7 @@ void loop() {
   if(digitalRead(buttonPin)==HIGH)                                     //Schalter gedrückt --> Programm beginnt (nach einem Durchgang wieder von vorne)
   {  
     
-    reaktion();                                                       // Lampen gehen an und dann aus, reaktionsteit wird gespeichert
+    reaktion();                                                       // Lampen gehen an und dann aus, Reaktionszeit wird gespeichert
     zeitAnzeige();                                                    // Reaktionszeit wird aud Leds angezeigt
   }
   else
