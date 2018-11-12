@@ -1,9 +1,7 @@
 /*
-
-*/
-
-const int buttonPin = 9;  //Bennenung der Pins   
-const int ledPin1 =  2;  // z.B. Arduino: Pin 2 ==> Programm: ledPin1
+*
+const int buttonPin = 9;                                                          //Bennenung der Pins   
+const int ledPin1 =  2;                                                           // z.B. Arduino: Pin 2 ==> Programm: ledPin1
 const int ledPin2 =  3;
 const int ledPin3 =  4;
 const int ledPin4 =  5;
@@ -11,93 +9,59 @@ const int ledPin5 =  6;
 const int ledPin6 =  7;
 const int ledPin7 =  8;
 
-int timeDelayStart = 200; // Geschwindigkweit der Startanimation
-int reaktiontestZeit; // Zeit bis die Lampen ausgehen
-int start; // Beginn des Tests
-int Dauer; // Zeit bis Zur Reaktion
-int AnzeigeDelay = 2000; // Zeit wie lange Lampen zur Anzeige der Reaktionszeit anbleiben
+int timeDelayStart = 200;                                                       // Geschwindigkweit der Startanimation
+int reaktiontestZeit;                                                           // Zeit bis die Lampen ausgehen
+int start;                                                                      // Beginn des Tests
+int Dauer;                                                                      // Zeit bis Zur Reaktion
+int AnzeigeDelay = 2000;                                                        // Zeit wie lange Lampen zur Anzeige der Reaktionszeit anbleiben
 
 void setup() {
-    pinMode(ledPin1,OUTPUT); // Led Pins werden als Output konfiguriert
+    pinMode(ledPin1,OUTPUT);                                                    // Led Pins werden als Output konfiguriert
     pinMode(ledPin2,OUTPUT);
     pinMode(ledPin3,OUTPUT);
     pinMode(ledPin4,OUTPUT);
     pinMode(ledPin5,OUTPUT);
     pinMode(ledPin6,OUTPUT);
     pinMode(ledPin7,OUTPUT);
-    pinMode(buttonPin,INPUT); // Button Pin wird als Input konfiguriert
+    pinMode(buttonPin,INPUT);                                                   // Button Pin wird als Input konfiguriert
     Serial.begin(9600);    
-    startAnimation(); // Startanimation wird einmal ausgeführt
+    startAnimation();                                                           // Startanimation wird einmal ausgeführt
 }
 
-
-void startAnimation() {  // Alle LAmpen gehen einmal an und dann aus
-  digitalWrite(ledPin1, HIGH);
-  delay(timeDelayStart);
-  digitalWrite(ledPin1, LOW);
-  
-  digitalWrite(ledPin2, HIGH);
-  delay(timeDelayStart);
-  digitalWrite(ledPin2, LOW);
-  
-  digitalWrite(ledPin3, HIGH);
-  delay(timeDelayStart);
-  digitalWrite(ledPin3, LOW);
-  
-  digitalWrite(ledPin4, HIGH);
-  delay(timeDelayStart);
-  digitalWrite(ledPin4, LOW);
-  
-  digitalWrite(ledPin5, HIGH);
-  delay(timeDelayStart);
-  digitalWrite(ledPin5, LOW);
-  
-  digitalWrite(ledPin6, HIGH);
-  delay(timeDelayStart);
-  digitalWrite(ledPin6, LOW);
-  
-  digitalWrite(ledPin7, HIGH);
-  delay(timeDelayStart);
-  digitalWrite(ledPin7, LOW);
+void startAnimation() {                                                         // Alle LAmpen gehen einmal an und dann aus
+  for (int i = ledPin1; i <= ledPin7; i++) {                                       
+    digitalWrite(i, HIGH);
+    delay(timeDelayStart);
+    digitalWrite(i, LOW);
+  }
 }
 
-void reaktion()  // Lampen gehen an und dann nach zufälliger Zeit aus
-{
-  
-  while (digitalRead(buttonPin) == HIGH) { // warten solange der Schalter gedrückt wird
+void reaktion()  {                                                             // Lampen gehen an und dann nach zufälliger Zeit aus
+  while (digitalRead(buttonPin) == HIGH) {                                     // warten solange der Schalter gedrückt wird
     1;
   }
   
-digitalWrite(ledPin1, HIGH); // Alle Lampen gehen an
-digitalWrite(ledPin2, HIGH);
-digitalWrite(ledPin3, HIGH);
-digitalWrite(ledPin4, HIGH);
-digitalWrite(ledPin5, HIGH);
-digitalWrite(ledPin6, HIGH);
-digitalWrite(ledPin7, HIGH);
-  
-reaktiontestZeit = random(500, 10000); // Zufällige Verzögerungszeit
+for (int i = ledPin1; i <= ledPin7; i++) {                                     // alle Lampen gehen an
+  digitalWrite(i, HIGH);
+  }
+
+reaktiontestZeit = random(500, 10000);                                        // Zufällige Verzögerungszeit
 delay(reaktiontestZeit);
 
-digitalWrite(ledPin1, LOW); // Alle LAmpen gehen aus
-digitalWrite(ledPin2, LOW);
-digitalWrite(ledPin3, LOW);
-digitalWrite(ledPin4, LOW);
-digitalWrite(ledPin5, LOW);
-digitalWrite(ledPin6, LOW);
-digitalWrite(ledPin7, LOW);
+for (int i = ledPin1; i <= ledPin7; i++) {                                    // alle LAmpen gehen aus
+  digitalWrite(i, LOW);
+  }
 
-
-     start = millis(); // Der aktuelle Wert von mills wird gespeichert (mills() startet mit dem start des Arduino und speichert die Betriebszeit)
-     while(digitalRead(buttonPin) == LOW) // Es wird gewartet bis der Schalter Gedrückt wird
+     start = millis();                                                        // Der aktuelle Wert von mills wird gespeichert (mills() startet mit dem start des Arduino und speichert die Betriebszeit)
+     while(digitalRead(buttonPin) == LOW)                                     // Es wird gewartet bis der Schalter Gedrückt wird
      {
-       1; // warten, solange Taste nicht gedrueckt
+       1;                                                                     // warten, solange Taste nicht gedrueckt
      }
-     Dauer = millis() - start; Die dauer // Die Zeit bis zum drücken des Schalters wird erechnet
+     Dauer = millis() - start;                                                // Die Zeit bis zum drücken des Schalters wird erechnet
    
 }
 
-  void zeitAnzeige()  // für alle 0,1 Sekunden Reaktionszeit: eine Lampe anmachen
+  void zeitAnzeige()                                                          // für alle 0,1 Sekunden Reaktionszeit: eine Lampe anmachen
 {
   if (Dauer<= 100)
   {
@@ -106,75 +70,61 @@ digitalWrite(ledPin7, LOW);
   }
   else if (Dauer<= 200)
   {
-    digitalWrite(ledPin1, HIGH);
-    digitalWrite(ledPin2, HIGH);
+    for (int i = ledPin1; i <= ledPin2; i++) { 
+  	digitalWrite(i, HIGH);
+    }
     delay(AnzeigeDelay);
   }
   else if (Dauer<= 300)
   {
-    digitalWrite(ledPin1, HIGH);
-    digitalWrite(ledPin2, HIGH);
-    digitalWrite(ledPin3, HIGH);
+    for (int i = ledPin1; i <= ledPin3; i++) { 
+  	digitalWrite(i, HIGH);
+    }
     delay(AnzeigeDelay);
   }
   else if (Dauer<= 400)
   {
-    digitalWrite(ledPin1, HIGH);
-    digitalWrite(ledPin2, HIGH);
-    digitalWrite(ledPin3, HIGH);
-    digitalWrite(ledPin4, HIGH);
+    for (int i = ledPin1; i <= ledPin4; i++) { 
+  	digitalWrite(i, HIGH);
+    }
     delay(AnzeigeDelay);
   }
   else if (Dauer<= 500)
   {
-    digitalWrite(ledPin1, HIGH);
-    digitalWrite(ledPin2, HIGH);
-    digitalWrite(ledPin3, HIGH);
-    digitalWrite(ledPin4, HIGH);
-    digitalWrite(ledPin5, HIGH);
+    for (int i = ledPin1; i <= ledPin5; i++) { 
+  	digitalWrite(i, HIGH);
+    }
     delay(AnzeigeDelay);
   }
    else if (Dauer<= 600)
   {
-    digitalWrite(ledPin1, HIGH);
-    digitalWrite(ledPin2, HIGH);
-    digitalWrite(ledPin3, HIGH);
-    digitalWrite(ledPin4, HIGH);
-    digitalWrite(ledPin5, HIGH);
-    digitalWrite(ledPin6, HIGH);
-     delay(AnzeigeDelay);
+    for (int i = ledPin1; i <= ledPin6; i++) { 
+  	digitalWrite(i, HIGH);
+    }
+    delay(AnzeigeDelay);
   }
    else if (Dauer> 600)
   {
-    digitalWrite(ledPin1, HIGH);
-    digitalWrite(ledPin2, HIGH);
-    digitalWrite(ledPin3, HIGH);
-    digitalWrite(ledPin4, HIGH);
-    digitalWrite(ledPin5, HIGH);
-    digitalWrite(ledPin6, HIGH);
-    digitalWrite(ledPin7, HIGH);
-     delay(AnzeigeDelay);
-
+    for (int i = ledPin1; i <= ledPin7; i++) { 
+  	digitalWrite(i, HIGH);
+    }
+    delay(AnzeigeDelay);
   }  
 }
 
 void loop() { 
     
-  if(digitalRead(buttonPin)==HIGH) //Schalter gedrückt --> Programm beginnt (nach einem Durchgang wieder von vorne)
+  if(digitalRead(buttonPin)==HIGH)                                     //Schalter gedrückt --> Programm beginnt (nach einem Durchgang wieder von vorne)
   {  
     
-    reaktion(); // Lampen gehen an und dann aus, reaktionsteit wird gespeichert
-    zeitAnzeige();  // Reaktionszeit wird aud Leds angezeigt
+    reaktion();                                                       // Lampen gehen an und dann aus, reaktionsteit wird gespeichert
+    zeitAnzeige();                                                    // Reaktionszeit wird aud Leds angezeigt
   }
   else
   { 
-    digitalWrite(ledPin1, LOW); // Solange Schalter nicht gedrückt alle Lampen aus
-    digitalWrite(ledPin2, LOW);
-    digitalWrite(ledPin3, LOW);
-    digitalWrite(ledPin4, LOW);
-    digitalWrite(ledPin5, LOW);
-    digitalWrite(ledPin6, LOW);
-    digitalWrite(ledPin7, LOW);  
+    for (int i = ledPin1; i <= ledPin7; i++) {                        // wenn Schalter nicht gedrückt, alle Lampen aus
+    digitalWrite(i, LOW);
+}
   }
   Serial.println(digitalRead(7));   
 }
