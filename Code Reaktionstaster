@@ -30,6 +30,37 @@ void setup() {
     startAnimation(); // Startanimation wird einmal ausgeführt
 }
 
+
+void startAnimation() {  // Alle LAmpen gehen einmal an und dann aus
+  digitalWrite(ledPin1, HIGH);
+  delay(timeDelayStart);
+  digitalWrite(ledPin1, LOW);
+  
+  digitalWrite(ledPin2, HIGH);
+  delay(timeDelayStart);
+  digitalWrite(ledPin2, LOW);
+  
+  digitalWrite(ledPin3, HIGH);
+  delay(timeDelayStart);
+  digitalWrite(ledPin3, LOW);
+  
+  digitalWrite(ledPin4, HIGH);
+  delay(timeDelayStart);
+  digitalWrite(ledPin4, LOW);
+  
+  digitalWrite(ledPin5, HIGH);
+  delay(timeDelayStart);
+  digitalWrite(ledPin5, LOW);
+  
+  digitalWrite(ledPin6, HIGH);
+  delay(timeDelayStart);
+  digitalWrite(ledPin6, LOW);
+  
+  digitalWrite(ledPin7, HIGH);
+  delay(timeDelayStart);
+  digitalWrite(ledPin7, LOW);
+}
+
 void reaktion()  // Lampen gehen an und dann nach zufälliger Zeit aus
 {
   
@@ -146,36 +177,4 @@ void loop() {
     digitalWrite(ledPin7, LOW);  
   }
   Serial.println(digitalRead(7));   
-}
-
-
-
-void startAnimation() {  // Alle LAmpen gehen einmal an und dann aus
-  digitalWrite(ledPin1, HIGH);
-  delay(timeDelayStart);
-  digitalWrite(ledPin1, LOW);
-  
-  digitalWrite(ledPin2, HIGH);
-  delay(timeDelayStart);
-  digitalWrite(ledPin2, LOW);
-  
-  digitalWrite(ledPin3, HIGH);
-  delay(timeDelayStart);
-  digitalWrite(ledPin3, LOW);
-  
-  digitalWrite(ledPin4, HIGH);
-  delay(timeDelayStart);
-  digitalWrite(ledPin4, LOW);
-  
-  digitalWrite(ledPin5, HIGH);
-  delay(timeDelayStart);
-  digitalWrite(ledPin5, LOW);
-  
-  digitalWrite(ledPin6, HIGH);
-  delay(timeDelayStart);
-  digitalWrite(ledPin6, LOW);
-  
-  digitalWrite(ledPin7, HIGH);
-  delay(timeDelayStart);
-  digitalWrite(ledPin7, LOW);
 }
