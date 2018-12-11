@@ -16,6 +16,9 @@ Ein Bild des Schaltplans um den Aufbau schnell nachzubauen und in Betrieb nehmen
 #### Super Rottis:
 Schaltplan des Reaktionstasters als Brd Datei zum Weiterentwickeln und Umbauen.
 
+#### Reaktionstester.zip:
+Reaktionstester mit Code als Bibliothek ausgelagert 
+
 ***
 Software zum  erstellen der Schaltpläne: <br>
 [Tinkercad](https://www.tinkercad.com/#/) <br>
