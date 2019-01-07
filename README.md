@@ -14,7 +14,7 @@ Ausführliche Beschreibung der Projekts mit Benutzerhandbuch und Entwicklerdokum
 Ein Bild des Schaltplans um den Aufbau schnell nachzubauen und in Betrieb nehmen zu können
 
 #### Super Rottis:
-Schaltplan des Reaktionstasters als Brd Datei zum Weiterentwickeln und Umbauen.
+Schaltplan des Reaktionstasters als Brd Datei zum Weiterentwickeln und Umbauen.(Tinkercad)
 
 #### Reaktionstester.zip:
 Reaktionstester mit Ausgabe als Bibliothek ausgelagert 
