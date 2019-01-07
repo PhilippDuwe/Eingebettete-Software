@@ -17,7 +17,7 @@ Ein Bild des Schaltplans um den Aufbau schnell nachzubauen und in Betrieb nehmen
 Schaltplan des Reaktionstasters als Brd Datei zum Weiterentwickeln und Umbauen.
 
 #### Reaktionstester.zip:
-Reaktionstester mit Code als Bibliothek ausgelagert 
+Reaktionstester mit Ausgabe als Bibliothek ausgelagert 
 
 ***
 Software zum  erstellen der Schaltpläne: <br>
