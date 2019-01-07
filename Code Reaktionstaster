@@ -78,8 +78,8 @@ void setup() {
     pinMode(buttonPin,INPUT);                                                   // Button Pin wird als Input konfiguriert
     Serial.begin(9600);    
     startAnimation();                                                           // Startanimation wird einmal ausgeführt
-    reaktiontest();                                                           
-    zeitAnzeige();
+    reaktiontest();                                                             // Es wird ein Test mit einer vordefinierten Reaktionszeit gemacht
+    zeitAnzeige();                                                              // Zeit aus dem Test wird zur Überprüfung angezeigt 
 }
 
 void startAnimation() {                                                         // Alle Lampen gehen einmal an und dann aus
@@ -95,7 +95,7 @@ void reaktion()  {                                                             /
     1;
   }
   
-for (int i = ledPin1; i <= ledPin7; i++) {                                     // alle Lampen gehen an
+for (int i = ledPin1; i <= ledPin7; i++) {                                    // alle Lampen gehen an
   digitalWrite(i, HIGH);
   }
 
