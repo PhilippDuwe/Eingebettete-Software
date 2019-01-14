@@ -19,7 +19,7 @@ Schaltplan des Reaktionstasters als Brd Datei zum Weiterentwickeln und Umbauen (
 #### Reaktionstester.zip:
 Reaktionstester mit Ausgabe als Bibliothek ausgelagert 
 
-#### Teileliste.jpg:
+#### TeileListe.jpg:
 Liste der für den Tester benötigten Teile
 
 ***
