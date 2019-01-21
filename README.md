@@ -22,6 +22,9 @@ Reaktionstester mit Ausgabe als Bibliothek ausgelagert
 #### TeileListe.jpg:
 Liste der für den Tester benötigten Teile
 
+#### Projekt Eingebettete Software Präsentation .pptx
+Powerpoint Präsentation zum Reaktionstaster. Sie beinhaltet einige Auszüge des Codes und ein Bild des Aufbaus. 
+
 ***
 Software zum  erstellen der Schaltpläne: <br>
 [Tinkercad](https://www.tinkercad.com/#/) <br>
